@@ -1,0 +1,13 @@
+FROM ubuntu:18.04 
+
+# go to home directory
+WORKDIR root/
+
+# initial setting
+RUN apt update &&\
+    apt install -y git tree translate-shell &&\
+    git clone https://github.com/4afs/setting &&\
+    echo "export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\] > '" >> ~/.bashrc &&\
+    echo "alias ej='trans :ja'" >> ~/.bashrc &&\
+    echo "alias ejb='trans :ja -b'" >> ~/.bashrc
+
