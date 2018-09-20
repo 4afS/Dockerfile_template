@@ -1,4 +1,4 @@
-#set up Haskell development environment
+## set up Haskell development environment
 RUN apt -y install curl &&\
     mkdir haskell
 WORKDIR ./haskell
@@ -6,7 +6,7 @@ RUN curl -sSL https://get.haskellstack.org/ | sh
 RUN stack update 
 RUN stack install hlint hoogle
 
-#set PATH to stack
+# set PATH to stack
 RUN echo "PATH='~/.local/bin:$PATH'" >> ~/.bashrc
 
 RUN echo "alias ghc='stack ghc'" >> ~/.bashrc &&\
