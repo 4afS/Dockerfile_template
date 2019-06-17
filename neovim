@@ -7,12 +7,6 @@ RUN add-apt-repository ppa:neovim-ppa/stable -y &&\
     apt update &&\
     apt install neovim
 
-# install dein.vim
-RUN mkdir -p ./.vim/bundles &&\
-    cd ./.vim/bundles &&\
-    curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh &&\
-    sh ./installer.sh ~/.cache/dein
-
 # save init.vim to $XDG_CONFIG_HOME/nvim and set PATH of config
 RUN mkdir -p ~/.config/nvim &&\
     wget -P ~/.config/nvim https://raw.githubusercontent.com/4afs/setting/master/init.vim &&\
@@ -20,5 +14,5 @@ RUN mkdir -p ~/.config/nvim &&\
 
 # upgrade neovim of pip3 and install plugins
 RUN pip3 install neovim --upgrade &&\
-    nvim +UpdateRemotePlugins +"call dein#install()" +"q!"
+    nvim +UpdateRemotePlugins +PlugInstall +"q!" +"q!"
 

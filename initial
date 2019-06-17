@@ -6,11 +6,11 @@ WORKDIR root/
 
 # initial setting
 RUN apt update &&\
-    apt install -y git tree translate-shell &&\
+    apt install -y git tree translate-shell curl wget &&\
     git clone https://github.com/4afs/setting &&\
     echo "export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\] > '" >> ~/.bashrc &&\
     echo "alias ej='trans :ja'" >> ~/.bashrc &&\
     echo "alias ejb='trans :ja -b'" >> ~/.bashrc &&\
     echo "\"del.swap\"=\"rm ~/.local/share/nvim/swap/*\"" >> ~/.bashrc &&\
-    echo "mkcd () { mkdir -p \"\$@\" && eval cd \"\\"\"\\$\$#\\"\"\"; } }" >> ~/.bashrc
+    echo "mkcd () { mkdir -p \"\$@\" && eval cd \"\\"\"\\$\$#\\"\"\"; }" >> ~/.bashrc
 

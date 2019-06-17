@@ -11,5 +11,4 @@ RUN echo "PATH='~/.local/bin:$PATH'" >> ~/.bashrc
 
 RUN echo "alias ghc='stack ghc'" >> ~/.bashrc &&\
     echo "alias ghci='stack ghci'" >> ~/.bashrc &&\
-    echo "alias runghc='stack runghc'" >> ~/.bashrc &&\
-
+    echo "alias runghc='stack runghc'" >> ~/.bashrc
