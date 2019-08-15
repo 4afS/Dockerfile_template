@@ -9,7 +9,7 @@ RUN add-apt-repository ppa:neovim-ppa/stable -y &&\
 
 # save init.vim to $XDG_CONFIG_HOME/nvim and set PATH of config
 RUN mkdir -p ~/.config/nvim &&\
-    wget -P ~/.config/nvim https://raw.githubusercontent.com/4afS/setting/master/setup/init.sh &&\
+    wget -P ~/.config/nvim https://raw.githubusercontent.com/4afS/setting/master/config/init.vim &&\
     echo "export XDG_CONFIG_HOME='~/.config'" >> ~/.bashrc
 
 # upgrade neovim of pip3 and install plugins
