@@ -5,7 +5,7 @@ RUN apt update &&\
 
 RUN add-apt-repository ppa:neovim-ppa/stable -y &&\
     apt update &&\
-    apt install neovim
+    apt install -y neovim
 
 # save init.vim to $XDG_CONFIG_HOME/nvim and set PATH of config
 RUN mkdir -p ~/.config/nvim &&\
